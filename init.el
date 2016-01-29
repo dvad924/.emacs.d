@@ -13,6 +13,22 @@
 (global-linum-mode 1)
 (setq linum-format "%4d \u2502")
 
+(require 'package)
+(setq package-enable-at-startup nil) ;;avoid initializing twice
+(package-initialize)
+;;enabling projectile
+(projectile-global-mode)
+
+;;enable flex for ido
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;;disable ido faces to see flx highlights
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
+(setq flx-ido-threshold 5000)
+
 ;;Javascript
 (add-to-list 'auto-mode-alist '("//.json$" . js-mode))
 (add-hook 'js-mode-hook 'js-minor-mode)
@@ -21,6 +37,13 @@
 
 (add-hook 'js-mode-hook
 	  (lambda () (flycheck-mode t)))
+(add-hook 'js-mode-hook
+	  (lambda () 
+	    ;;scan the file for nested code blocks
+	    (imenu-add-menubar-index)
+	    ;;activate folding mode
+	    (hs-minor-mode t)))
+
 
 ;;AucTex
 (setq TeX-auto-save t)
