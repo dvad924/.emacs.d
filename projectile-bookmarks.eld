@@ -1,0 +1,1 @@
+("~/code/gtfsgeocensus/" "~/code/transitModeler/" "~/.emacs.d/")
