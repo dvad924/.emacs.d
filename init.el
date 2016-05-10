@@ -5,6 +5,7 @@
 			 ("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+
 ;; org keymaps
 (define-key global-map "\C-ca" 'org-agenda)
 
@@ -25,10 +26,47 @@
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
+
 ;;disable ido faces to see flx highlights
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 (setq flx-ido-threshold 5000)
+
+;;auto complete with company
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(add-to-list 'company-backends 'company-c-headers)
+(add-to-list 'company-backends 'company-tern)
+
+;;use web-mode for .jsx files
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.react.js$" . web-mode))
+
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;;disable jshint since we prefer eslint checking
+(setq-default flycheck-disabled-checkers
+	      (append flycheck-disabled-checkers
+		      '(javascript-jshint)))
+;;use eslint with web-mode for jsx files
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+
+
+
+;;customize flycheck temp file prefix
+(setq-default flycheck-temp-prefix ".flycheck")
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode. Adjust indents"
+  ;;; http://web-mode.org/
+  (setq web-mode-markup-indent-offset 4)
+  (setq web-mode-code-indent-offset 4))
+(add-hook 'web-mode-hook 'my-web-mode-hook)
+;; for better jsx syntax-highlighting in web-mode
+
+
 
 ;;Javascript
 (add-to-list 'auto-mode-alist '("//.json$" . js-mode))
@@ -81,6 +119,7 @@
 ;(add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 ;; enable flycheck by default
 (add-hook 'after-init-hook#'global-flycheck-mode)
+
 
 (add-hook 'after-make-frame-functions
 	  (lambda (frame)
