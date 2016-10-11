@@ -13,7 +13,16 @@
 
 ;; line numbers
 (global-linum-mode 1)
-(setq linum-format "%4d \u2502")
+
+;;save all backups to particular directory
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+      backup-by-copying t      ; Don't delink hardlinks
+      version-control t        ; User version numbers on backups
+      delete-old-versions t    ; Automatically delete excess backups
+      kept-new-versions 20     ; how many of the newest versions to keep
+      kept-old-versions 5      ; and how many of the old
+)
+
 
 (require 'package)
 (setq package-enable-at-startup nil) ;;avoid initializing twice
@@ -41,7 +50,17 @@
 ;;use web-mode for .jsx files
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.react.js$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js" . web-mode))
 
+;; javascript web-mode hack
+(add-hook 'web-mode-hook
+	  (lambda ()
+	    ;; short circuit js mode and do everything in jsx-mode
+	    (if (equal web-mode-content-type "javascript")
+		(web-mode-set-content-type "jsx")
+	      (message "now set to: %s" web-mode-content-type))))
+
+	     
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
