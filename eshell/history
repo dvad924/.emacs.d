@@ -1,0 +1,18 @@
+cd 
+ls
+midir notes
+mkdir notes
+cd notes/
+exit
+ipython
+clear
+ipython
+exit
+ls
+exit
+ls
+ls
+ipython
+ls
+ipython
+exit
