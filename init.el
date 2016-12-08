@@ -6,11 +6,20 @@
 			 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 
-;; org keymaps
+;; org 
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+(setq org-agenda-files (list "~/org/meetings.org"))
 
 
+;;python
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "--simple-prompt -i")
 
+;; TABS
+(setq-default indent-tabs-mode nil)
 ;; line numbers
 (global-linum-mode 1)
 
@@ -81,7 +90,7 @@
   "Hooks for Web mode. Adjust indents"
   ;;; http://web-mode.org/
   (setq web-mode-markup-indent-offset 4)
-  (setq web-mode-code-indent-offset 4))
+  (setq web-mode-code-indent-offset 8))
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 ;; for better jsx syntax-highlighting in web-mode
 
@@ -158,6 +167,7 @@
  '(cua-normal-cursor-color "#657b83")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
+ '(custom-enabled-themes (quote (manoj-dark)))
  '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
@@ -190,6 +200,9 @@
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(org-agenda-files nil)
+ '(package-selected-packages
+   (quote
+    (elpy websocket web-mode web-beautify solarized-theme request racer protobuf-mode projectile multi-web-mode json-mode js-comint flycheck-rust flx-ido company-web company-tern company-cmake company-c-headers company-anaconda color-theme-solarized color-theme-sanityinc-solarized cm-mode cl-generic auto-complete-auctex auctex ac-js2 ac-anaconda)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))

@@ -1,0 +1,128 @@
+ls
+ls
+cd CaffeNet/
+ls
+./modeltest.sh 
+./modeltest.sh 
+./modeltest.sh 
+ls
+ipython
+cd /Volumes/DVBackBox/peta/peta_data/MIT/archive/00924_female_back.jpg
+./modeltest.sh 
+cd /Volumes/DVBackBox/peta/
+ls
+cd people/
+ls
+cd people/
+ls
+cd ..
+ls
+cd -
+cd 
+cd code/deepLearning/peta/src/
+ls
+cd CaffeNet/
+ls
+./modeltest.sh 
+./modeltest.sh 
+$CAFFE_ROOT/build/tools/convert_imageset \	
+$CAFFE_ROOT/build/tools/convert_imageset \--resize_height=227 \--resize_width=227
+$CAFFE_ROOT/build/tools/convert_imageset \--resize_height=227 \--resize_width=227 \--shuffle \../actions3/ \../labels.txt \actions3_test_lmdb
+ipython
+ls
+python vidparse.py /Volumes/DVBackBox/DroneProtect-testing-set/Normal_Static_Day_Half_1_1_1.mp4 
+python vidparse.py /Volumes/DVBackBox/DroneProtect-testing-set/Normal_Static_Day_Half_1_1_1.mp4 
+python vidparse.py /Volumes/DVBackBox/DroneProtect-testing-set/Normal_Static_Day_Half_1_1_1.mp4 
+python vidparse.py /Volumes/DVBackBox/DroneProtect-testing-set/Normal_Static_Day_Half_1_1_1.mp4 
+python vidparse.py /Volumes/DVBackBox/DroneProtect-testing-set/Normal_Static_Day_Half_1_1_1.mp4 
+python vidparse.py /Volumes/DVBackBox/DroneProtect-testing-set/Normal_Static_Day_Half_1_1_1.mp4 
+python vidparse.py /Volumes/DVBackBox/DroneProtect-testing-set/Normal_Static_Day_Half_1_1_1.mp4 
+python vidparse.py /Volumes/DVBackBox/DroneProtect-testing-set/Normal_Static_Day_Half_1_1_1.mp4 
+python vidparse.py /Volumes/DVBackBox/DroneProtect-testing-set/Normal_Static_Day_Half_1_1_1.mp4 
+python vidparse.py /Volumes/DVBackBox/DroneProtect-testing-set/Normal_Static_Day_Half_1_1_1.mp4 
+ls
+ls
+clear
+ls
+ls
+clear
+ls
+python vidtest.sh -h
+python vidparse.py -h
+cd /Volumes/DVBackBox/UCFDrone/
+cd ../UCF
+ls
+cd -
+cd -
+cd ~/code/deepLearning/peta/
+ls
+cd src/
+ls
+./vidtest.sh
+exit
+ls
+less training_loss_acc_small_k.txt 
+python script.py training_loss_acc_small_k.txt 
+python script.py training_loss_acc_small_k.txt 
+python script.py training_loss_acc_small_k.txt 
+ls
+man scp
+ls
+man scp
+cd ..
+ls
+ls
+cd data_aug_logs/
+ls
+./pull_logs.sh 
+ls
+cd log/
+ls
+touch plotlog.py
+ls
+mv plotlog.py ..
+ls
+ls
+ls
+cd ..
+ls
+rm pull_logs.sh\~
+ls
+ls
+ls
+ls
+ls
+cd ..
+ls
+less plot_all.py 
+cd zf_results/
+ls
+cd ..
+ls
+cd vgg_results/
+ls
+cd comb/
+ls
+cd ..
+ls
+cd ..
+ls
+cd dmodel7.7.16/
+cd ../data_aug_logs/
+ls
+mv ../plot_loss_and_acc.py plotlog.py 
+less ../eval.py 
+ls
+cd log/
+ls
+cd no_augs/
+ls
+less model_no_augs_60000.txt.2016-07-09_00-58-15 model_no_augs_60000.txt.2016-07
+less model_no_augs_60000.txt.2016-07-09_00-58-15 
+ls
+ls
+python detector_utils.py
+python detector_utils.py
+ls ~/code/deepLearning/peta/src/actions3/orgdata/images/1001.jpg
+python detector_utils.py
+python detector_utils.py
