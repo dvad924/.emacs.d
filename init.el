@@ -12,10 +12,36 @@
 (load-theme 'manoj-dark t)
 ;; org
 (require 'org)
+(require 'cl)
+(load-file "~/.emacs.d/org-learn.el")
+(load-file "~/.emacs.d/org-drill.el")
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 (setq org-agenda-files (list "~/org/meetings.org"))
+(defun build-card-vocab ()
+  "Takes User through a set of prompts to build a card template."
+  (interactive)
+  (insert "** vocab  :drill:\n"
+	  ":PROPERTIES:\n"
+	  ":DRILL_CARD_TYPE: twosided\n"
+	  ":END:\n"
+	  "Translate this word\n\n"
+	  "*** Chinese\n"
+	  (read-string "Chinese Chars: ") "\n"
+	  "*** English\n"
+	  (read-string "English Meaning: ") "\n"
+	  "*** Example\n"
+	  (read-string "Example Usage: ") "\n"))
+
+(defun build-card-pinyin ()
+  "Takes User through a set of prompts to build a pronounciation card."
+  (interactive)
+  (insert "** pinyin  :drill:\n"
+	  "What is the pinyin of "
+	  (read-string "Chinese Char: ") "?\n"	  	  
+	  "*** Answer\n"
+	  (read-string "Pinyin: ") "\n"))
 
 
 ;;python
@@ -93,7 +119,7 @@
 
 ;;Javascript
 (add-to-list 'auto-mode-alist '("//.json$" . js-mode))
-(load-file ".emacs.d/emacs-js/emacs-js.el")
+(load-file "~/.emacs.d/emacs-js/emacs-js.el")
 (setq js2-strict-missing-semi-warning nil)
 (setq js2-missing-semi-one-line-override nil)
 
@@ -182,9 +208,12 @@
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+ '(org-modules
+   (quote
+    (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (company-go go-mode xref-js2 clojure-mode clojurescript-mode buffer-move nodejs-repl markdown-mode dockerfile-mode csharp-mode websocket web-mode web-beautify solarized-theme request racer pylint protobuf-mode projectile nvm multi-web-mode json-mode js-comint flycheck-rust flx-ido elpy cuda-mode company-web company-tern company-lua company-cmake company-c-headers company-anaconda color-theme-solarized color-theme-sanityinc-solarized cm-mode cl-generic auto-complete-auctex auctex ac-js2 ac-anaconda)))
+    (rainbow-blocks rainbow-delimiters org org-drill-table company-go go-mode xref-js2 clojure-mode clojurescript-mode buffer-move nodejs-repl markdown-mode dockerfile-mode csharp-mode websocket web-mode web-beautify solarized-theme request racer pylint protobuf-mode projectile nvm multi-web-mode json-mode js-comint flycheck-rust flx-ido elpy cuda-mode company-web company-tern company-lua company-cmake company-c-headers company-anaconda color-theme-solarized color-theme-sanityinc-solarized cm-mode cl-generic auto-complete-auctex auctex ac-js2 ac-anaconda)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
