@@ -4,6 +4,7 @@
 ;;; Sub packages or dependecies will follow from this
 
 ;;; Code:
+(use-package projectile :ensure t)
 (use-package csv-mode :ensure t)
 (use-package haskell-mode :ensure t)
 (use-package 0xc :ensure t)
@@ -60,7 +61,6 @@
 (use-package racer :ensure t)
 (use-package pylint :ensure t)
 (use-package protobuf-mode :ensure t)
-(use-package projectile :ensure t)
 (use-package nvm :ensure t)
 (use-package multi-web-mode :ensure t)
 (use-package json-mode :ensure t)

@@ -9,7 +9,8 @@
 			 ("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
-;;; GLOBAL CONFIGS
+;(load "~/.emacs.d/installed.el")
+;;; GLOBAL CONFIG
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 ;;; c/c++ config
 (load-file "~/.emacs.d/emacs-c-ide-demo/init.el")
@@ -87,15 +88,15 @@
 
 
 ;;enable flex for ido
-(require 'flx-ido)
-(ido-mode 1)
-(ido-everywhere 1)
-(flx-ido-mode 1)
+;; (require 'flx-ido)
+;; (ido-mode 1)
+;; (ido-everywhere 1)
+;; (flx-ido-mode 1)
 
-;;disable ido faces to see flx highlights
-(setq ido-enable-flex-matching t)
-(setq ido-use-faces nil)
-(setq flx-ido-threshold 5000)
+;; ;;disable ido faces to see flx highlights
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-use-faces nil)
+;; (setq flx-ido-threshold 5000)
 
 ;;auto complete with company
 (require 'company)
