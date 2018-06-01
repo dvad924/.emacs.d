@@ -15,15 +15,9 @@
 ;;; c/c++ config
 (load-file "~/.emacs.d/emacs-c-ide-demo/init.el")
 
-;;; mu4e config
-(load-file "~/.emacs.d/mu4e-config.el")
 ;;; Global Key Configs
 (global-set-key (kbd "C-x g") 'helm-ag-project-root)
 (global-set-key (kbd "C-x T") 'ansi-term)
-
-;;; SQL configs
-(load-file "~/.emacs.d/dbconfig.el")
-
 
 
 ;; ORG CONFIG
@@ -128,7 +122,7 @@
 
 ;;Javascript
 (add-to-list 'auto-mode-alist '("//.json$" . js-mode))
-(load-file "~/.emacs.d/emacs-js/emacs-js.el")
+;;(load-file "~/.emacs.d/emacs-js/emacs-js.el")
 (setq js2-strict-missing-semi-warning nil)
 (setq js2-missing-semi-one-line-override nil)
 
