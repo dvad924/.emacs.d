@@ -3,3 +3,6 @@ backup/*
 eshell
 ido.last
 projectile-bookmarks.eld
+configuration.el
+elpa/*
+history
