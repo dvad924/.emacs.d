@@ -1,8 +1,0 @@
-/home/dvad/ros/rosbuild_ws/package_dir/lsd_slam/lsd_slam_core/src/main_live_odometry.cpp
-/home/dvad/ros/rosbuild_ws/package_dir/lsd_slam/lsd_slam_core/src/#main_live_odometry.cpp#
-/home/dvad/ros/rosbuild_ws/package_dir/lsd_slam/lsd_slam_core/src/util/Undistorter.cpp
-/home/dvad/ros/rosbuild_ws/package_dir/lsd_slam/lsd_slam_core/src/util/#Undistorter.cpp#
-/home/dvad/ros/rosbuild_ws/package_dir/lsd_slam/lsd_slam_core/src/IOWrapper/ROS/ROSImageStreamThread.cpp
-/home/dvad/ros/rosbuild_ws/package_dir/lsd_slam/lsd_slam_core/src/IOWrapper/ROS/#ROSImageStreamThread.cpp#
-/home/dvad/ros/rosbuild_ws/package_dir/lsd_slam/lsd_slam_core/src/IOWrapper/InputImageStream.h
-/home/dvad/ros/rosbuild_ws/package_dir/lsd_slam/lsd_slam_core/src/IOWrapper/#InputImageStream.h#
