@@ -53,7 +53,7 @@
     (helm flycheck rainbow-delimiters rainbow-delimiters-mode csv-mode haskell-mode 0xc pdf-tools color-theme-sanityinc-tomorrow iedit anzu ws-butler dtrt-indent clean-aindent-mode volatile-highlights helm-gtags helm-projectile helm-swoop zygospore use-package docker-api docker-compose-mode docker-tramp rainbow-identifiers ob-browser ob-restclient ob-sql-mode org-beautify-theme multi-term company company-php company-restclient restclient undo-tree dracula-theme cargo magit helm-ag ag rainbow-blocks org org-drill-table company-go go-mode xref-js2 clojure-mode clojurescript-mode buffer-move nodejs-repl markdown-mode dockerfile-mode csharp-mode websocket web-mode web-beautify solarized-theme request racer pylint protobuf-mode projectile nvm multi-web-mode json-mode js-comint flycheck-rust flx-ido elpy cuda-mode company-web company-tern company-lua company-cmake company-c-headers company-anaconda color-theme-solarized color-theme-sanityinc-solarized cm-mode cl-generic auto-complete-auctex auctex ac-js2 ac-anaconda)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
- '(projectile-mode t)
+ '(projectile-mode t nil (projectile))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")
