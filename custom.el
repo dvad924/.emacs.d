@@ -41,16 +41,20 @@
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
  '(inhibit-startup-screen t)
+ '(jdee-db-active-breakpoint-face-colors (cons "#10151C" "#5EC4FF"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#10151C" "#8BD49C"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#10151C" "#384551"))
  '(magit-diff-use-overlays nil)
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
+ '(objed-cursor-color "#D95468")
  '(org-modules
    (quote
     (org-bbdb org-bibtex org-docview org-gnus org-info org-irc org-mhe org-rmail org-w3m org-drill)))
  '(package-selected-packages
    (quote
-    (helm flycheck rainbow-delimiters rainbow-delimiters-mode csv-mode haskell-mode 0xc pdf-tools color-theme-sanityinc-tomorrow iedit anzu ws-butler dtrt-indent clean-aindent-mode volatile-highlights helm-gtags helm-projectile helm-swoop zygospore use-package docker-api docker-compose-mode docker-tramp rainbow-identifiers ob-browser ob-restclient ob-sql-mode org-beautify-theme multi-term company company-php company-restclient restclient undo-tree dracula-theme cargo magit helm-ag ag rainbow-blocks org org-drill-table company-go go-mode xref-js2 clojure-mode clojurescript-mode buffer-move nodejs-repl markdown-mode dockerfile-mode csharp-mode websocket web-mode web-beautify solarized-theme request racer pylint protobuf-mode projectile nvm multi-web-mode json-mode js-comint flycheck-rust flx-ido elpy cuda-mode company-web company-tern company-lua company-cmake company-c-headers company-anaconda color-theme-solarized color-theme-sanityinc-solarized cm-mode cl-generic auto-complete-auctex auctex ac-js2 ac-anaconda)))
+    (all-the-icons all-the-fonts helm flycheck rainbow-delimiters rainbow-delimiters-mode csv-mode haskell-mode 0xc pdf-tools color-theme-sanityinc-tomorrow iedit anzu ws-butler dtrt-indent clean-aindent-mode volatile-highlights helm-gtags helm-projectile helm-swoop zygospore use-package docker-api docker-compose-mode docker-tramp rainbow-identifiers ob-browser ob-restclient ob-sql-mode org-beautify-theme multi-term company company-php company-restclient restclient undo-tree dracula-theme cargo magit helm-ag ag rainbow-blocks org org-drill-table company-go go-mode xref-js2 clojure-mode clojurescript-mode buffer-move nodejs-repl markdown-mode dockerfile-mode csharp-mode websocket web-mode web-beautify solarized-theme request racer pylint protobuf-mode projectile nvm multi-web-mode json-mode js-comint flycheck-rust flx-ido elpy cuda-mode company-web company-tern company-lua company-cmake company-c-headers company-anaconda color-theme-solarized color-theme-sanityinc-solarized cm-mode cl-generic auto-complete-auctex auctex ac-js2 ac-anaconda)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(projectile-mode t nil (projectile))
