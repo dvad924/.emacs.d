@@ -21,6 +21,8 @@
     (scroll-bar-mode -1)
   )
 )
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
 #+END_SRC
 * Repo Packages
 #+BEGIN_SRC emacs-lisp
@@ -63,6 +65,7 @@
 #+BEGIN_SRC emacs-lisp
 (use-package company :ensure t)
 (use-package company-tern :ensure t)
+
 (add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends 'company-tern)
 #+END_SRC
@@ -80,13 +83,14 @@
  FIXME
 * Helm Config
 #+BEGIN_SRC emacs-lisp
+
 (use-package helm
   :ensure t
   :bind (("M-x" . helm-M-x))
   :config
   (define-key global-map (kbd "C-x C-f") 'helm-find-files)
   (define-key global-map (kbd "C-x b") 'helm-buffers-list)
-  (define-key helm-find-files-map "\t" 'helm-execute-persistent-action)
+  ;;(define-key helm-find-files-map "\t" 'helm-execute-persistent-action)
 )
 (use-package helm-projectile
   :ensure t
@@ -98,5 +102,50 @@
 (eval-after-load "org"
   '(require 'ox-md nil t))
 #+END_SRC
-* Docker
-(use-package docker-tramp)
+
+* Terraform
+#+BEGIN_SRC emacs-lisp
+(use-package terraform-mode :ensure t)
+#+END_SRC
+* Git
+#+BEGIN_SRC emacs-lisp
+(use-package magit :ensure t)
+#+END_SRC
+* Golang
+#+BEGIN_SRC emacs-lisp
+;; go executable
+(setq exec-path (append '("/usr/local/Cellar/go/1.12.3/bin") exec-path))
+(setenv "PATH" (concat "/usr/local/Cellar/go/1.12.3/bin:" (getenv "PATH")))
+
+;; error highlighting
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(defun my-go-mode-hook ()
+       (setq tab-width 2 indent-tabs-mode 1)
+       ;; eldoc shows signature of function at point in status bar
+       (go-eldoc-setup)
+       (local-set-key (kbd "M-.") #'godef-jump)
+       (add-hook 'before-save-hook 'gofmt-before-save)
+       
+       ;; extra keybindings from https://github.com/bbatsov/prelude/blob/master/modules/prelude-go.el
+       (let ((map go-mode-map))
+            (define-key map (kbd "C-c a") 'go-test-current-project) 
+	    (define-key map (kbd "C-c m") 'go-test-current-file)
+	    (define-key map (kbd "C-c .") 'go-test-current-test)
+	    (define-key map (kbd "C-c b") 'go-run)))
+
+(add-hook 'go-mode-hook 'my-go-mode-hook)
+
+;; "company" auto-completion
+(use-package company :ensure t)
+(use-package go-mode :ensure t)
+(use-package company-go :ensure t)
+(use-package go-eldoc :ensure t)
+(add-hook 'go-mode-hook (lambda ()
+                           (company-mode)
+			   (set (make-local-variable 'company-backends) '(company-go))))
+
+#+END_SRC
+* Python
+#+BEGIN_SRC emacs-lisp
+(use-package pyenv-mode :ensure t)
+#+END_SRC
